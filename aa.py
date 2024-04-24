@@ -4,7 +4,7 @@ from pyngrok import ngrok
 
 def abc():
     ngrok.set_auth_token("2fXMlgN32DuoUGj6RTjz61921wr_TCUg1kJ8V6WnG5pnj53H")
-    http_tunnel = ngrok.connect(5000,bind_addr="0.0.0.0")
+    http_tunnel = ngrok.connect(5000)
 
     # Print the public URL of the tunnel
     print("Public URL:", http_tunnel.public_url) 
@@ -15,6 +15,8 @@ abct.start()
 
 app = Flask(__name__)
 
+appo = Flask("aa")
+
 @app.route('/<path:path>', methods=['GET', 'POST','CONNECT'])
 def index(path):
     
@@ -24,5 +26,12 @@ def index(path):
     
     return f'{path} Request information printed to console.'
 
+
+def aaq():
+    app.run(port=5000)
+
+aaaq = Thread(target=aaq)
+aaaq.start()
+
 if __name__ == '__main__':
-    app.run(debug=True,port=5000,host="0.0.0.0") 
+    appo.run(debug=True,port=5000,host="0.0.0.0") 
