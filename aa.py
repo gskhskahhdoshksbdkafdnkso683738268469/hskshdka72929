@@ -12,4 +12,4 @@ def index(path):
     return f'{path} Request information printed to console.'
 
 if __name__ == '__main__':
-    app.run(debug=True,port=8080,ssl_context='adhoc') 
+    app.run(debug=True,port=8080,host="0.0.0.0") 
