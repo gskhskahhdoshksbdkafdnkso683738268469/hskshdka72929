@@ -7,7 +7,7 @@ def index(path):
     
     
     # Print request information
-   # print(dict(request.headers))
+    print(dict(request.headers))
     
     return f'{path} Request information printed to console.'
 
