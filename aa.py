@@ -4,7 +4,7 @@ from pyngrok import ngrok
 
 def abc():
     ngrok.set_auth_token("2fXMlgN32DuoUGj6RTjz61921wr_TCUg1kJ8V6WnG5pnj53H")
-    http_tunnel = ngrok.connect(5000)
+    http_tunnel = ngrok.connect(5000,"tcp")
 
     # Print the public URL of the tunnel
     print("Public URL:", http_tunnel.public_url) 
@@ -28,7 +28,7 @@ def index(path):
 
 
 def aaq():
-    app.run(port=5000)
+    app.run(port=5000,ssl_context="adhoc")
 
 aaaq = Thread(target=aaq)
 aaaq.start()
