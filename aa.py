@@ -4,6 +4,7 @@ from pyngrok import ngrok
 
 def abc():
     ngrok.set_auth_token("2fXMlgN32DuoUGj6RTjz61921wr_TCUg1kJ8V6WnG5pnj53H")
+    ngrok.kill()
     http_tunnel = ngrok.connect(5000,"tcp")
 
     # Print the public URL of the tunnel
