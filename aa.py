@@ -3,7 +3,8 @@ from threading import Thread
 from pyngrok import ngrok
 
 def abc():
-    http_tunnel = ngrok.connect(5000, "http")
+    ngrok.set_auth_token("2fXMlgN32DuoUGj6RTjz61921wr_TCUg1kJ8V6WnG5pnj53H")
+    http_tunnel = ngrok.connect(5000, hostname="0.0.0.0")
 
     # Print the public URL of the tunnel
     print("Public URL:", http_tunnel.public_url) 
