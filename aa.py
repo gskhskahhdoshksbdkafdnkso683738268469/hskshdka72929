@@ -29,7 +29,7 @@ def index(path):
 
 
 def aaq():
-    app.run(port=5000,ssl_context="adhoc")
+    app.run(port=5000)
 
 aaaq = Thread(target=aaq)
 aaaq.start()
