@@ -1,4 +1,16 @@
 from flask import Flask, request
+from threading import Thread
+from pyngrok import ngrok
+
+def abc():
+    http_tunnel = ngrok.connect(5000, "http")
+
+    # Print the public URL of the tunnel
+    print("Public URL:", http_tunnel.public_url) 
+
+
+abct = Thread(target=abc)
+abct.start()
 
 app = Flask(__name__)
 
@@ -12,4 +24,4 @@ def index(path):
     return f'{path} Request information printed to console.'
 
 if __name__ == '__main__':
-    app.run(debug=True,port=8080,host="0.0.0.0") 
+    app.run(debug=True,port=5000,host="0.0.0.0") 
